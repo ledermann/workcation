@@ -26,7 +26,9 @@ html lang="en"
       ]
 
       div class="xl:flex-1 xl:flex xl:overflow-y-hidden"
-        search-filters
+        search-filters[
+          search-text= search_param
+        ]
 
         main class="py-6 xl:flex-1 xl:overflow-x-hidden"
           = yield

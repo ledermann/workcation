@@ -1,0 +1,12 @@
+- @properties.group_by(&:location).each_with_index do |(location, properties), i|
+  div class=("#{'mt-6' if i > 0}")
+    div class="px-4 xl:px-8"
+      h3.text-gray-900.text-xl
+        = location.title
+      p.text-gray-600
+        = location.description
+    div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden"
+      div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-8"
+        - properties.each_with_index do |property, j|
+          div class="sm:mt-0 sm:w-80 sm:flex-shrink-0 #{'mt-10 sm:ml-4' if j > 0}"
+            property-card :property=property.to_json

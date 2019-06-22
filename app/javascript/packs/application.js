@@ -22,8 +22,14 @@ import "controllers"
 // Vue
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue'
+import SiteHeader from '@/components/SiteHeader'
+import SearchFilters from '@/components/SearchFilters'
+import PropertyCard from '@/components/PropertyCard'
 
 Vue.use(TurbolinksAdapter)
+Vue.component('search-filters', SearchFilters)
+Vue.component('site-header', SiteHeader)
+Vue.component('property-card', PropertyCard)
 
 document.addEventListener('turbolinks:load', () => {
   for (const element of document.querySelectorAll('[data-behavior="vue"]')) {

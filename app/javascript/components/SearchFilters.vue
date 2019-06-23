@@ -54,7 +54,7 @@
           <span class="block text-sm font-semibold text-gray-500">Amenities</span>
           <div class="sm:flex sm:-mx-2 sm:flex-wrap">
             <template v-for="(amenity,index) in amenities">
-              <label :key="index" class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
+              <label :key="index" class="mt-3 flex items-center sm:w-1/4 sm:pl-2 lg:w-1/2 xl:w-full">
                 <input class="form-checkbox bg-gray-900 focus:bg-gray-700" type="checkbox" :name="amenity">
                 <span class="ml-2 text-white">{{ amenity }}</span>
               </label>

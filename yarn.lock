@@ -760,12 +760,14 @@
   resolved "https://registry.yarnpkg.com/@stimulus/webpack-helpers/-/webpack-helpers-1.1.1.tgz#eff60cd4e58b921d1a2764dc5215f5141510f2c2"
   integrity sha512-XOkqSw53N9072FLHvpLM25PIwy+ndkSSbnTtjKuyzsv8K5yfkFB2rv68jU1pzqYa9FZLcvZWP4yazC0V38dx9A==
 
-"@tailwindcss/custom-forms@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/custom-forms/-/custom-forms-0.1.4.tgz#50a082fd8fd54b515a361bd793e7f3631cbfa380"
-  integrity sha512-j9BTAVjZneABnaK1M/sjgP8rQPwprunOsNMm3TbnpkJfXtVlSkmiDAIUAJFgRxKu/xGz7M3smB6FaoAzSK/lfQ==
+"@tailwindcss/custom-forms@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/custom-forms/-/custom-forms-0.2.0.tgz#ff5a7829f1693a11867f5b3ade57d99e1ecc4143"
+  integrity sha512-s2D96nqnyDoytfQfqPS2PenhYih/lSzdK8H17Bb6Bif7+xmR4Ik2/1xhbbs/bzgLGTb6fpEtbzQeV6jgPu7W+A==
   dependencies:
+    lodash "^4.17.11"
     mini-svg-data-uri "^1.0.3"
+    traverse "^0.6.6"
 
 "@types/events@*":
   version "3.0.0"
@@ -6815,6 +6817,11 @@ tough-cookie@~2.4.3:
   dependencies:
     psl "^1.1.24"
     punycode "^1.4.1"
+
+traverse@^0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
+  integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
 
 trim-newlines@^1.0.0:
   version "1.0.0"

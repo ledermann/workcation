@@ -1,0 +1,53 @@
+variables:
+  CONTAINER_CURRENT_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  CONTAINER_LATEST_IMAGE: $CI_REGISTRY_IMAGE:latest
+  CONTAINER_STABLE_IMAGE: $CI_REGISTRY_IMAGE:stable
+  COMMIT_SHA: $CI_COMMIT_SHA
+
+stages:
+  - test
+  - build
+  - release
+
+before_script:
+  - echo $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+
+test:
+  stage: test
+
+  script:
+    - docker-compose -f docker-compose.test.yml build --pull
+    - docker-compose -f docker-compose.test.yml run --rm app sh -c "bundle exec bundle-audit check --update && rubocop ."
+    - docker-compose -f docker-compose.test.yml run --rm app sh -c "./docker/wait-for-services.sh && COVERAGE=true bundle exec rake db:create test"
+
+  after_script:
+    - docker-compose -f docker-compose.test.yml run --rm app rm -rf tmp/
+    - docker-compose -f docker-compose.test.yml down --volumes
+
+build:
+  stage: build
+  script:
+    - export COMMIT_TIME=$(git show -s --format=%ci $CI_COMMIT_SHA)
+    - docker-compose build --pull
+    - docker tag workcation_app $CONTAINER_CURRENT_IMAGE
+    - docker push $CONTAINER_CURRENT_IMAGE
+
+release-latest-image:
+  stage: release
+  script:
+    - docker pull $CONTAINER_CURRENT_IMAGE
+    - docker tag $CONTAINER_CURRENT_IMAGE $CONTAINER_LATEST_IMAGE
+    - docker push $CONTAINER_LATEST_IMAGE
+    - curl -X POST $PORTAINER_HOOK_APP
+    - curl -X POST $PORTAINER_HOOK_WORKER
+  only:
+    - develop
+
+release-stable-image:
+  stage: release
+  script:
+    - docker pull $CONTAINER_CURRENT_IMAGE
+    - docker tag $CONTAINER_CURRENT_IMAGE $CONTAINER_STABLE_IMAGE
+    - docker push $CONTAINER_STABLE_IMAGE
+  only:
+    - master

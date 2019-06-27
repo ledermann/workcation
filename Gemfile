@@ -38,6 +38,15 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Ruby static code analyzer, based on the community Ruby style guide
+  gem 'rubocop', require: false
+
+  # An extension of RuboCop focused on code performance checks.
+  gem 'rubocop-performance', require: false
+
+  # RuboCop extension focused on enforcing Rails best practices and coding conventions.
+  gem 'rubocop-rails'
 end
 
 group :test do

@@ -6,7 +6,7 @@
           <svg class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41l.01-.01zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/></svg>
         </div>
         <form>
-          <input class="block w-full bg-gray-900 focus:outline-none focus:bg-white focus:text-gray-900 text-white rounded-lg pl-10 pr-4 py-2" placeholder="Search by keywords" name="search" :value="searchText">
+          <input class="block w-full form-input form-input-dark pl-10 pr-4 py-2" placeholder="Search by keywords" name="search" :value="searchText">
         </form>
       </div>
       <button type="button" class="ml-4 inline-flex items-center hover:bg-gray-600 focus:outline-none focus:shadow-outline rounded-lg shadow pl-3 pr-4"
@@ -23,19 +23,19 @@
           <div class="flex flex-wrap -mx-2">
             <label class="block w-1/2 px-2 sm:w-1/4 lg:w-1/2">
               <span class="text-sm font-semibold text-gray-500">Bedrooms</span>
-              <select class="mt-1 form-select block w-full text-white shadow focus:bg-gray-600">
+              <select class="mt-1 form-select form-select-dark block w-full">
                 <option>4</option>
               </select>
             </label>
             <label class="block w-1/2 px-2 sm:w-1/4 lg:w-1/2">
               <span class="text-sm font-semibold text-gray-500">Bathrooms</span>
-              <select class="mt-1 form-select block w-full text-white shadow focus:bg-gray-600">
+              <select class="mt-1 form-select form-select-dark block w-full">
                 <option>2</option>
               </select>
             </label>
             <label class="mt-4 block w-full px-2 sm:mt-0 sm:w-1/2 lg:mt-4 lg:w-full">
               <span class="text-sm font-semibold text-gray-500">Price Range</span>
-              <select class="mt-1 form-select block w-full text-white shadow focus:bg-gray-600">
+              <select class="mt-1 form-select form-select-dark block w-full">
                 <option>Up to $2,000/wk</option>
               </select>
             </label>
@@ -46,7 +46,7 @@
           <div class="sm:flex sm:-mx-2 lg:block lg:mx-0">
             <template v-for="(propertyType, index) in propertyTypes">
               <label :key="index" class="mt-3 sm:w-1/4 sm:px-2 flex items-center lg:w-full lg:px-0">
-                <input class="form-radio bg-gray-900 focus:bg-gray-700" type="radio" name="propertyType" :value="propertyType">
+                <input class="form-radio form-radio-dark" type="radio" name="propertyType" :value="propertyType">
                 <span class="ml-2 text-white">{{ propertyType }}</span>
               </label>
             </template>
@@ -57,7 +57,7 @@
           <div class="sm:flex sm:-mx-2 sm:flex-wrap">
             <template v-for="(amenity,index) in amenities">
               <label :key="index" class="mt-3 flex items-center sm:w-1/4 sm:pl-2 lg:w-1/2 xl:w-full">
-                <input class="form-checkbox bg-gray-900 focus:bg-gray-700" type="checkbox" :name="amenity">
+                <input class="form-checkbox form-checkbox-dark" type="checkbox" :name="amenity">
                 <span class="ml-2 text-white">{{ amenity }}</span>
               </label>
             </template>

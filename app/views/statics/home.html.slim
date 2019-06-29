@@ -1,20 +1,23 @@
 div class="antialiased bg-gray-100"
   div class="px-8 py-12 max-w-xl mx-auto lg:max-w-full lg:px-0 lg:py-20 lg:relative lg:min-h-screen"
-    div class="xl:max-w-6xl lg:mx-auto"
+    div class="lg:mx-auto xl:max-w-6xl"
       div class="lg:pl-12 lg:pr-8 lg:w-7/12"
         = image_pack_tag 'logo-white.svg', class: 'h-10 w-auto', alt: 'Logo'
 
         div class="mt-8 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12"
-          img class="h-56 w-full object-cover object-center sm:h-56 rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-left lg:shadow-none lg:rounded-none" alt="Woman workcationing on beach" src= asset_pack_path('media/images/beach-work.jpg')
-          svg class="hidden lg:block absolute inset-y-0 left-0 w-16 h-full" fill="none" preserveaspectratio="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+          img class="h-56 w-full object-cover object-center rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-left lg:shadow-none lg:rounded-none" alt="Woman workcationing on beach" src= asset_pack_path('media/images/beach-work.jpg')
+          svg class="hidden absolute inset-y-0 left-0 w-16 h-full lg:block" fill="none" preserveaspectratio="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
             polygon class="text-gray-100" fill="currentColor" points="0,0 0,100 100,0"
-        h1 class="mt-8 lg:mt-12 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight"
+
+        h1 class="mt-8 text-3xl font-bold text-gray-900 leading-tight sm:text-4xl lg:mt-12"
           | You can work from anywhere.
           br class="hidden sm:inline"
           span class="text-indigo-500"
             | Take advantage of it.
+
         p class="mt-4 text-gray-600 text-xl"
           | Workcation helps you find work-friendly rentals in beautiful locations so you can enjoy some nice weather even when you’re not on vacation.
+
         div class="mt-6"
-          a class="px-5 py-3 inline-block bg-indigo-500 hover:bg-indigo-400 rounded-lg text-white font-semibold tracking-wide uppercase shadow-lg" href=properties_path
+          a class="px-5 py-3 inline-block bg-indigo-500 rounded-lg text-white font-semibold tracking-wide uppercase shadow-lg hover:bg-indigo-400" href=properties_path
             | Book your escape

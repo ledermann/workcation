@@ -1,12 +1,27 @@
-- @properties.group_by(&:location).each_with_index do |(location, properties), i|
-  div class=("#{'mt-6' if i > 0}")
-    div class="px-4 xl:px-8"
-      h3.text-gray-900.text-xl
-        = location.title
-      p.text-gray-600
-        = location.description
-    div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden"
-      div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-8"
-        - properties.each_with_index do |property, j|
-          div class="sm:mt-0 sm:w-80 sm:flex-shrink-0 #{'mt-10 sm:ml-4' if j > 0}"
-            property-card :property=property.to_json
+div class="min-h-screen bg-gray-200 antialiased xl:flex xl:flex-col xl:h-screen" data-behavior="vue"
+  site-header[
+    search-text= search_param
+    user-name= "Isla Schoger"
+    user-image= "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
+    :primary-links= primary_links.to_json
+    :account-links= account_links.to_json
+  ]
+
+  div class="xl:flex-1 xl:flex xl:overflow-y-hidden"
+    search-filters[
+      search-text= search_param
+    ]
+
+    main class="py-6 xl:flex-1 xl:overflow-x-hidden"
+      - @properties.group_by(&:location).each_with_index do |(location, properties), i|
+        div class=("#{'mt-6' if i > 0}")
+          div class="px-4 xl:px-8"
+            h3.text-gray-900.text-xl
+              = location.title
+            p.text-gray-600
+              = location.description
+          div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden"
+            div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-8"
+              - properties.each_with_index do |property, j|
+                div class="sm:mt-0 sm:w-80 sm:flex-shrink-0 #{'mt-10 sm:ml-4' if j > 0}"
+                  property-card :property=property.to_json

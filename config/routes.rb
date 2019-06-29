@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :properties, only: [ :index ]
 
-  root to: 'properties#index'
+  root to: 'statics#home'
 end

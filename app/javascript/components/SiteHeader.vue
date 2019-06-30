@@ -1,9 +1,9 @@
 <template>
   <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between xl:bg-white">
     <div class="flex justify-between px-4 py-3 xl:w-72 xl:bg-gray-900 xl:justify-center xl:py-5">
-      <div>
+      <a href="/">
         <img class="h-8 w-auto" src="@/images/logo-black.svg"/>
-      </div>
+      </a>
       <div class="flex sm:hidden">
         <button @click="toggle" type="button" class="px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white">
           <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

@@ -28,6 +28,9 @@
  * @import "components/forms";
  */
 
+[v-cloak] {
+  display: none !important;
+}
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

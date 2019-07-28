@@ -23,4 +23,5 @@ html lang="en"
     noscript
       strong We're sorry but workcation doesn't work properly without JavaScript enabled. Please enable it to continue.
 
-    = content_for?(:content) ? yield(:content) : yield
+    div id="app" data-behavior="vue" v-cloak=""
+      = yield

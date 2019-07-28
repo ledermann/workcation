@@ -57,9 +57,14 @@
             </template>
             <template #dropdown>
               <div class="mt-3 bg-white xl:border rounded-lg w-48 py-2 shadow-xl">
-                <a href="#account" class="block hover:text-white text-gray-800 px-4 py-2 hover:bg-indigo-500">Account settings</a>
-                <a href="#support" class="block hover:text-white text-gray-800 mt-0 px-4 py-2 hover:bg-indigo-500">Support</a>
-                <a href="#sign-out" class="block hover:text-white text-gray-800 mt-0 px-4 py-2 hover:bg-indigo-500">Sign out</a>
+                <a v-for="(link, index) in accountLinks"
+                    :key="index"
+                    :href="link.url"
+                    class="block hover:text-white text-gray-800 px-4 py-2 hover:bg-indigo-500"
+                    :class="index > 0 ? 'mt-0' : ''"
+                >
+                  {{ link.name }}
+                </a>
               </div>
             </template>
           </Dropdown>

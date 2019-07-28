@@ -5,7 +5,14 @@ simple-layout
         = image_pack_tag 'logo-white.svg', class: 'h-10 w-auto', alt: 'Logo'
 
         div class="mt-8 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12"
-          img class="h-56 w-full object-cover object-center rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-left lg:shadow-none lg:rounded-none" alt="Woman workcationing on beach" src= asset_pack_path('media/images/beach-work.jpg')
+          = image_tag asset_pack_path('media/images/beach-work-small.jpg'),
+                      srcset: [ \
+                        [ asset_pack_path('media/images/beach-work-small.jpg'), '1024w' ],
+                        [ asset_pack_path('media/images/beach-work-large.jpg'), '3008w' ] \
+                      ],
+                      sizes: '100vw',
+                      class: 'h-56 w-full object-cover object-center rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-left lg:shadow-none lg:rounded-none',
+                      alt: 'Woman workcationing on beach'
           svg class="hidden absolute inset-y-0 left-0 w-16 h-full lg:block" fill="none" preserveaspectratio="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
             polygon class="text-gray-100" fill="currentColor" points="0,0 0,100 100,0"
 

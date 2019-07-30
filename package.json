@@ -2,14 +2,14 @@
   "name": "workcation",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.0-alpha",
-    "@rails/activestorage": "^6.0.0-alpha",
-    "@rails/ujs": "^6.0.0-alpha",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^4.0.7",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.10",
-    "vue-loader": "^15.7.0",
+    "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
     "vue-turbolinks": "^2.0.4"
   },
@@ -17,8 +17,8 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "@tailwindcss/custom-forms": "^0.2.0",
-    "tailwindcss": "^1.0.4",
-    "webpack-dev-server": "^3.7.2"
+    "tailwindcss": "^1.1.2",
+    "webpack-dev-server": "^3.8.0"
   },
   "eslintConfig": {
     "root": true,

@@ -19,7 +19,7 @@ services:
     build:
       context: .
       args:
-        - ADDITIONAL_PACKAGES=nodejs yarn
+        - ADDITIONAL_PACKAGES=nodejs yarn git
         - EXECJS_RUNTIME=Node
         - RAILS_ENV=test
     environment:

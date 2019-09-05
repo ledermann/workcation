@@ -32,6 +32,12 @@
   display: none !important;
 }
 
+// TODO: This should be included in the "custom-forms" plugin!
+.form-select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

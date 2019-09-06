@@ -1,20 +1,11 @@
-name: Ruby
-
-on: [push]
-
+name: Docker Compose Actions Workflow
+on: push
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.6.3
-    - name: Build and test with Rake
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
-        bundle exec rake
+    - uses: actions/checkout@master
+    - name: Build the stack
+      run: docker-compose -f docker-compose.test.yml build --pull
+    - name: Test
+      run: docker-compose -f docker-compose.test.yml run --rm app sh -c "./docker/wait-for-services.sh && COVERAGE=true bundle exec rake db:create test"

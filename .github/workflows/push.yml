@@ -8,5 +8,4 @@ jobs:
     - name: Build the stack
       run: docker-compose -f docker-compose.test.yml build --pull
     - name: Test
-      run: docker-compose -f docker-compose.test.yml run --rm app sh -c "./docker/wait-for-services.sh && bundle exec rake db:create spec"
-
+      run: docker-compose -f docker-compose.test.yml run --rm app sh -c "./docker/wait-for-services.sh && COVERAGE=true bundle exec rake db:create test"

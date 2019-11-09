@@ -1,0 +1,115 @@
+name: Test, build and deploy
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install PostgreSQL 11 client
+        run: |
+          sudo apt-get -yqq install libpq-dev
+
+      - name: Cache Ruby gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+
+      - name: Bundle gems
+        run: |
+          gem install bundler
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3 --without production
+
+      - name: Audit gems
+        run: bundle exec bundle-audit check --update
+
+      - name: Lint with RuboCop
+        run: bundle exec rubocop --parallel
+
+      - name: Cache Node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Node modules
+        run: yarn install
+
+      - name: Run Tests
+        env:
+          PGHOST: localhost
+          PGUSER: postgres
+          RAILS_ENV: test
+        run: |
+          bundle exec rake db:prepare
+          bundle exec rake test
+          bundle exec rake test:system
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build the production image
+        run: |
+          export COMMIT_TIME=$(git show -s --format=%ci ${GITHUB_SHA})
+          export COMMIT_SHA=${GITHUB_SHA}
+          docker-compose build --pull
+
+      - name: Save Docker image as file
+        run: docker save workcation_app | gzip > untested.tar.gz
+
+      - name: Upload Docker image as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: docker-image
+          path: untested.tar.gz
+
+  deploy:
+    needs: [test, build]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Download Docker image from build job
+        uses: actions/download-artifact@v1
+        with:
+          name: docker-image
+
+      - name: Load Docker image from file
+        shell: bash
+        run: docker load < docker-image/untested.tar.gz
+
+      - name: Tag the image as production
+        run: docker tag workcation_app ${{ secrets.GITLAB_REGISTRY }}/${{ secrets.GITLAB_REPO }}:latest
+
+      - name: Login to GitLab Docker Registry
+        run: echo ${{ secrets.GITLAB_TOKEN }} | docker login -u gitlab-ci-token --password-stdin ${{ secrets.GITLAB_REGISTRY }}
+
+      - name: Push the production image
+        run: docker push ${{ secrets.GITLAB_REGISTRY }}/${{ secrets.GITLAB_REPO }}:latest
+
+      - name: Send notification
+        run: curl -X POST ${{ secrets.DEPLOY_HOOK }}

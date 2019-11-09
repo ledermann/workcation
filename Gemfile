@@ -5,8 +5,8 @@ ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -22,6 +22,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Security Audit for installed Gems
+  gem 'bundler-audit'
 end
 
 group :development do
@@ -31,6 +34,15 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Ruby static code analyzer, based on the community Ruby style guide
+  gem 'rubocop', require: false
+
+  # An extension of RuboCop focused on code performance checks.
+  gem 'rubocop-performance', require: false
+
+  # RuboCop extension focused on enforcing Rails best practices and coding conventions.
+  gem 'rubocop-rails'
 end
 
 group :test do

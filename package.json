@@ -2,6 +2,8 @@
   "name": "workcation",
   "private": true,
   "dependencies": {
+    "@inertiajs/inertia": "^0.1.7",
+    "@inertiajs/inertia-vue": "^0.1.2",
     "@rails/ujs": "^6.0.1",
     "@rails/webpacker": "^4.0.7",
     "vue": "^2.6.10",

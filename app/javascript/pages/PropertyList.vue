@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="min-h-screen bg-gray-200 antialiased xl:flex xl:flex-col xl:h-screen">
     <site-header
       :primary-links="primaryLinks"
       :account-links="accountLinks"
       user-name="Jane Doe"
       user-image="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
+      class="xl:flex-shrink-0"
     />
 
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">

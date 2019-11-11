@@ -5,17 +5,5 @@
 </template>
 
 <script>
-export default {
-  props: {
-    title: String
-  },
-  watch: {
-    title: {
-      immediate: true,
-      handler(title) {
-        document.title = title
-      }
-    }
-  }
-}
+export default {}
 </script>

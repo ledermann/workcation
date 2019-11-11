@@ -20,6 +20,9 @@ req.keys().map((key) => {
   return Vue.component(name, req(key).default)
 })
 
+import VueMeta from 'vue-meta'
+Vue.use(VueMeta)
+
 import {
   InertiaApp
 } from '@inertiajs/inertia-vue'
@@ -30,6 +33,10 @@ Vue.use(InertiaApp)
 const app = document.getElementById('app')
 
 new Vue({
+  metaInfo: {
+    title: 'Loading…',
+    titleTemplate: '%s | Workcation',
+  },
   render: h => h(InertiaApp, {
     props: {
       initialPage: JSON.parse(app.dataset.page),

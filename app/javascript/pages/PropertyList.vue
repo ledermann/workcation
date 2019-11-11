@@ -1,5 +1,5 @@
 <template>
-  <layout title="Properties">
+  <div>
     <site-header
       :primary-links="primaryLinks"
       :account-links="accountLinks"
@@ -36,7 +36,7 @@
         </div>
       </main>
     </div>
-  </layout>
+  </div>
 </template>
 
 <script>
@@ -44,9 +44,8 @@ import Layout from '@/shared/Layout.vue'
 import { groupBy } from 'lodash'
 
 export default {
-  components: {
-    Layout
-  },
+  metaInfo: { title: 'Properties' },
+  layout: Layout,
   props: {
     properties: Array,
     primaryLinks: Array,

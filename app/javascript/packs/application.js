@@ -22,6 +22,10 @@ req.keys().map((key) => {
 import VueMeta from 'vue-meta'
 Vue.use(VueMeta)
 
+import axios from 'axios'
+axios.defaults.xsrfCookieName = "CSRF-TOKEN";
+axios.defaults.xsrfHeaderName = "X-CSRF-Token";
+
 import {
   InertiaApp
 } from '@inertiajs/inertia-vue'

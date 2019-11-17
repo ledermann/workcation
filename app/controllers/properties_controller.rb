@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def index
-    render inertia: 'PropertyList', props: {
+    render inertia: 'Properties/Index', props: {
       properties: properties.as_json(
         only: [
           :id,
@@ -30,7 +30,7 @@ class PropertiesController < ApplicationController
   def new
     @property ||= Property.new
 
-    render inertia: 'PropertyNew', props: {
+    render inertia: 'Properties/New', props: {
       accountLinks: helpers.account_links,
       primaryLinks: helpers.primary_links,
       locations: Location.all.as_json(only: [:id, :title]),

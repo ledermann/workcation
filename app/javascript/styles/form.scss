@@ -1,0 +1,6 @@
+// TODO: This fix should be included in the "custom-forms" plugin
+.form-select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
+

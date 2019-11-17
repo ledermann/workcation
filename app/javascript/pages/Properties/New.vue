@@ -14,6 +14,8 @@
 
       <main class="py-6">
         <div class="px-4 xl:px-8">
+          <flash-messages />
+
           <h1 class="mb-8 font-bold text-3xl">
             <inertia-link class="text-indigo-500 hover:text-indigo-900" href="/properties">Properties</inertia-link>
             <span class="text-indigo-500 font-medium">/</span> Add yours

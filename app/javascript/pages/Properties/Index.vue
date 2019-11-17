@@ -12,6 +12,8 @@
       <search-filters />
 
       <main v-if="properties.length > 0" class="py-6 xl:flex-1 xl:overflow-x-hidden">
+        <flash-messages class="px-4 xl:px-8" />
+
         <div :class="i > 0 ? 'mt-6' : ''" v-for="(properties, locationId, i) in byLocation" v-bind:key="locationId">
           <div class="px-4 xl:px-8">
             <h3 class="text-gray-900 text-xl">{{ properties[0].location.title }}</h3>

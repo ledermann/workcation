@@ -24,18 +24,15 @@ class PropertiesController < ApplicationController
       ),
       accountLinks: helpers.account_links,
       primaryLinks: helpers.primary_links
-    }
+    }.merge(shared_inertia_data)
   end
 
   def new
-    @property ||= Property.new
-
     render inertia: 'Properties/New', props: {
       accountLinks: helpers.account_links,
       primaryLinks: helpers.primary_links,
-      locations: Location.all.as_json(only: [:id, :title]),
-      errors: @property.errors
-    }
+      locations: Location.all.as_json(only: [:id, :title])
+    }.merge(shared_inertia_data)
   end
 
   def create
@@ -50,7 +47,8 @@ class PropertiesController < ApplicationController
     if @property.save
       redirect_to properties_path, notice: 'Property was successfully created.'
     else
-      new
+      session[:errors] = @property.errors
+      redirect_to new_property_path, alert: 'Property cannot be saved!'
     end
   end
 

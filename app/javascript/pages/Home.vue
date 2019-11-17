@@ -78,12 +78,19 @@
           so you can enjoy some nice weather even when you’re not on vacation.
         </p>
 
-        <div class="mt-6">
+        <div class="mt-8 -mx-1 flex flex-wrap">
           <inertia-link
             href="/properties"
-            class="px-5 py-3 inline-block bg-indigo-600 rounded-lg text-white font-semibold tracking-wide uppercase shadow-lg hover:bg-indigo-400"
+            class="m-1 px-4 py-3 bg-indigo-600 rounded-lg text-white font-semibold tracking-wide uppercase shadow-lg hover:bg-indigo-400"
           >
             Book your escape
+          </inertia-link>
+
+          <inertia-link
+            href="/properties/new"
+            class="m-1 px-4 py-3 bg-black rounded-lg text-white font-semibold tracking-wide uppercase shadow-lg hover:bg-gray-700"
+          >
+            List your property
           </inertia-link>
         </div>
       </div>

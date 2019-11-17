@@ -1,5 +1,12 @@
 class Property < ApplicationRecord
-  belongs_to :location
+  belongs_to :location, inverse_of: :properties
+
+  validates :title, presence: true
+  validates :beds, :baths, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :price, :baths, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :rating, presence: true
+  validates :review_count, presence: true
+  validates :image_url, presence: true
 
   scope :search_for_keywords, lambda { |keywords|
     if keywords.present?

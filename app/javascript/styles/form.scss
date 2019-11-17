@@ -4,3 +4,20 @@
   text-shadow: 0 0 0 white;
 }
 
+.form-label {
+  @apply .mb-2 .block .text-gray-900 .select-none;
+}
+
+.form-error {
+  @apply .text-red-500 .mt-2 .text-sm;
+}
+
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+  @apply .border-red-300;
+
+  &:focus {
+    box-shadow: 0 0 0 1px config('colors.red.500');
+  }
+}

@@ -3,7 +3,7 @@ module ApplicationHelper
     [
       {
         name: 'List your property',
-        url: '#'
+        url: new_property_path
       },
       {
         name: 'Trips',

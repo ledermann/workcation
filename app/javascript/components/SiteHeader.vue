@@ -32,12 +32,12 @@
       <div class="sm:flex sm:items-center">
         <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
           <template v-for="(link, index) in primaryLinks">
-            <a :key="index"
+            <inertia-link :key="index"
                :href="link.url"
                :class="{ 'mt-1': index > 0 }"
                class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-900 xl:hover:bg-gray-200">
               {{ link.name }}
-            </a>
+            </inertia-link>
           </template>
         </div>
         <div class="relative px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
@@ -47,11 +47,11 @@
           </div>
           <div class="mt-5 sm:hidden">
             <template v-for="(link, index) in accountLinks">
-              <a :key="index"
+              <inertia-link :key="index"
                  :href="link.url"
                  class="mt-3 block text-gray-400 hover:text-white">
                 {{ link.name }}
-              </a>
+              </inertia-link>
             </template>
           </div>
           <Dropdown class="hidden sm:block">
@@ -64,14 +64,14 @@
             </template>
             <template #dropdown>
               <div class="mt-3 bg-white xl:border rounded-lg w-48 py-2 shadow-xl">
-                <a v-for="(link, index) in accountLinks"
+                <inertia-link v-for="(link, index) in accountLinks"
                     :key="index"
                     :href="link.url"
                     class="block hover:text-white text-gray-800 px-4 py-2 hover:bg-indigo-500"
                     :class="index > 0 ? 'mt-0' : ''"
                 >
                   {{ link.name }}
-                </a>
+                </inertia-link>
               </div>
             </template>
           </Dropdown>

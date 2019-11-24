@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  # inertia_share does not work in dev mode, so do it manually for now
-  def shared_inertia_data
+  inertia_share do
     {
       errors: session.delete(:errors) || [],
       flash: session.delete(:flash) || {}

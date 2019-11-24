@@ -6,6 +6,6 @@ class HomeController < ApplicationController
         commit_sha:  ENV['COMMIT_SHA'] ? ENV['COMMIT_SHA'].first(7) : 'development',
         commit_url:  ENV['COMMIT_SHA'] ? "https://github.com/ledermann/workcation/commit/#{ENV['COMMIT_SHA']}" : 'https://github.com/ledermann/workcation'
       }
-    }.merge(shared_inertia_data)
+    }
   end
 end

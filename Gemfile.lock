@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/ledermann/inertia-rails.git
-  revision: 43768f282fe4c35657cc26db5c497013e6f4443d
-  branch: fix-renderer-page-url
+  revision: 34efe01f74550b3815b16cbb6c8a554ec88edfc8
+  branch: patched
   specs:
     inertia_rails (1.2.0)
 

@@ -24,7 +24,7 @@ class PropertiesController < ApplicationController
       ),
       accountLinks: helpers.account_links,
       primaryLinks: helpers.primary_links
-    }.merge(shared_inertia_data)
+    }
   end
 
   def new
@@ -32,7 +32,7 @@ class PropertiesController < ApplicationController
       accountLinks: helpers.account_links,
       primaryLinks: helpers.primary_links,
       locations: Location.all.as_json(only: [:id, :title])
-    }.merge(shared_inertia_data)
+    }
   end
 
   def create

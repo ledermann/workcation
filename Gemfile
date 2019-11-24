@@ -57,4 +57,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # The Rails adapter for Inertia.js
-gem 'inertia_rails', github: 'ledermann/inertia-rails', branch: 'fix-renderer-page-url'
+gem 'inertia_rails', github: 'ledermann/inertia-rails', branch: 'patched'

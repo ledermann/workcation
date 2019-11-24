@@ -8,7 +8,7 @@ environment.config.merge({
   resolve: {
     alias: {
       '@': path.resolve('app/javascript'),
-      vue$: 'vue/dist/vue.esm.js',
+      vue$: 'vue/dist/vue.runtime.esm.js',
     }
   }
 })

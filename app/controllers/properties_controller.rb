@@ -1,4 +1,11 @@
 class PropertiesController < ApplicationController
+  inertia_share do
+    {
+      accountLinks: helpers.account_links,
+      primaryLinks: helpers.primary_links
+    }
+  end
+
   def index
     render inertia: 'Properties/Index', props: {
       properties: properties.as_json(
@@ -21,16 +28,12 @@ class PropertiesController < ApplicationController
             ]
           }
         }
-      ),
-      accountLinks: helpers.account_links,
-      primaryLinks: helpers.primary_links
+      )
     }
   end
 
   def new
     render inertia: 'Properties/New', props: {
-      accountLinks: helpers.account_links,
-      primaryLinks: helpers.primary_links,
       locations: Location.all.as_json(only: [:id, :title])
     }
   end

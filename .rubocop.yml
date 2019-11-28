@@ -32,6 +32,9 @@ Rails/BulkChangeTable:
 Rails/ReversibleMigration:
   Enabled: false
 
+Rails/FilePath:
+  EnforcedStyle: arguments
+
 ### Bundler
 
 Bundler/OrderedGems:
@@ -143,5 +146,5 @@ Layout/SpaceInsideReferenceBrackets:
 Layout/SpaceInsideParens:
   Enabled: false
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ledermann/inertia-rails.git
-  revision: 48f8166304e7c8a92eea4abb1111dbaa2654d1a2
+  revision: 14b48781e78576babde7a2f0f79bf3ad9ca356b4
   branch: patched
   specs:
     inertia_rails (1.2.0)
@@ -86,7 +86,7 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.5)
     erubi (1.9.0)
-    ffi (1.11.2)
+    ffi (1.11.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.7.0)
@@ -98,7 +98,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    loofah (2.3.1)
+    loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -158,7 +158,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
-    rubocop (0.76.0)
+    rubocop (0.77.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
@@ -167,7 +167,7 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.7)
     rubocop-performance (1.5.1)
       rubocop (>= 0.71.0)
-    rubocop-rails (2.3.2)
+    rubocop-rails (2.4.0)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)

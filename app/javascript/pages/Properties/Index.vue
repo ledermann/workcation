@@ -14,10 +14,10 @@
       <main v-if="properties.length > 0" class="py-6 xl:flex-1 xl:overflow-x-hidden">
         <flash-messages class="px-4 xl:px-8" />
 
-        <div :class="i > 0 ? 'mt-6' : ''" v-for="(properties, locationId, i) in byLocation" v-bind:key="locationId">
+        <div :class="i > 0 ? 'mt-6' : ''" v-for="(properties, locationId, i) in propertiesGroupedByLocation" v-bind:key="locationId">
           <div class="px-4 xl:px-8">
-            <h3 class="text-gray-900 text-xl">{{ properties[0].location.title }}</h3>
-            <p class="text-gray-700">{{ properties[0].location.description }}</p>
+            <h3 class="text-gray-900 text-xl">{{ getLocation(properties[0]).title }}</h3>
+            <p class="text-gray-700">{{ getLocation(properties[0]).description }}</p>
           </div>
           <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
             <div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-8">
@@ -50,15 +50,21 @@ export default {
   metaInfo: { title: 'Properties' },
   layout: Layout,
   props: {
+    locations: Array,
     properties: Array,
     primaryLinks: Array,
     accountLinks: Array
   },
   computed: {
-    byLocation() {
-      return groupBy(this.properties, function(property) {
-        return property.location.id
-      })
+    propertiesGroupedByLocation() {
+      return groupBy(this.properties, property => property.location_id)
+    }
+  },
+  methods: {
+    getLocation(property) {
+      return this.locations.find(
+        location => location.id == property.location_id
+      )
     }
   }
 }

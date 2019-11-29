@@ -8,6 +8,9 @@ class PropertiesController < ApplicationController
 
   def index
     render inertia: 'Properties/Index', props: {
+      locations: locations.as_json(
+        only: [ :id, :title, :description ]
+      ),
       properties: properties.as_json(
         only: [
           :id,
@@ -17,17 +20,9 @@ class PropertiesController < ApplicationController
           :rating,
           :review_count,
           :price,
-          :image_url
-        ],
-        include: {
-          location: {
-            only: [
-              :id,
-              :title,
-              :description
-            ]
-          }
-        }
+          :image_url,
+          :location_id
+        ]
       )
     }
   end
@@ -58,12 +53,16 @@ class PropertiesController < ApplicationController
   private
 
   def properties
-    Property.
-      search_for_keywords(params[:keywords]).
-      search_for_beds(params[:beds]).
-      search_for_baths(params[:baths]).
-      search_for_price(params[:price]).
-      includes(:location)
+    @properties ||= Property.
+                    search_for_keywords(params[:keywords]).
+                    search_for_beds(params[:beds]).
+                    search_for_baths(params[:baths]).
+                    search_for_price(params[:price])
+  end
+
+  def locations
+    @locations ||= Location.
+                   where(id: properties.map(&:location_id).uniq)
   end
 
   def property_params

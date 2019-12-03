@@ -41,8 +41,10 @@ if (matomo.enabled) {
 }
 
 import axios from 'axios'
-axios.defaults.xsrfCookieName = "CSRF-TOKEN";
-axios.defaults.xsrfHeaderName = "X-CSRF-Token";
+window.addEventListener('DOMContentLoaded', () => {
+  const csrfToken = document.querySelector("meta[name=csrf-token]").content
+  axios.defaults.headers.common['X-CSRF-Token'] = csrfToken
+})
 
 import {
   InertiaApp

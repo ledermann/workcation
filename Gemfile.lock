@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ledermann/inertia-rails.git
-  revision: b8520039ac346e548824fb19d33c03dd8a8458c0
+  revision: 09d5629cef1f31f60b99848cbb5ae64a621aa6c9
   branch: patched
   specs:
     inertia_rails (1.2.1)

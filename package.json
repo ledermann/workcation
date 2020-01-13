@@ -9,7 +9,7 @@
     "timeago.js": "^4.0.2",
     "vue": "^2.6.11",
     "vue-loader": "^15.8.3",
-    "vue-meta": "^2.3.1",
+    "vue-meta": "^2.3.2",
     "vue-template-compiler": "^2.6.11"
   },
   "version": "0.1.0",

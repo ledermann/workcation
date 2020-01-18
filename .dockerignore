@@ -4,7 +4,6 @@
 .gitignore
 .dockerignore
 .github/*
-docker-compose.*
 Dockerfile
 log/*
 node_modules/*
@@ -12,3 +11,7 @@ public/assets/*
 public/packs/*
 public/packs-test/*
 tmp/*
+yarn-error.log
+*.DS_Store
+docker-cache
+docker-builder.tar

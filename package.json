@@ -14,7 +14,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.0.4",
+    "@fullhuman/postcss-purgecss": "^2.0.5",
     "@tailwindcss/custom-forms": "^0.2.1",
     "tailwindcss": "^1.2.0-canary.5",
     "webpack-dev-server": "^3.10.1"

@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/ledermann/inertia-rails.git
-  revision: 09d5629cef1f31f60b99848cbb5ae64a621aa6c9
+  revision: 4c54368c2ac2c1520ffbd949cb2426b9f4d52322
   branch: patched
   specs:
-    inertia_rails (1.2.1)
+    inertia_rails (1.2.2)
 
 GEM
   remote: https://rubygems.org/

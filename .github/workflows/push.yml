@@ -98,6 +98,9 @@ jobs:
             rm -rf docker-builder.tar
           fi
 
+      - name: Login to GitHub Package Registry
+        run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p ${{ secrets.PACKAGES_TOKEN }}
+
       - name: Build the production image
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
@@ -109,9 +112,6 @@ jobs:
           export COMMIT_TIME=$(git show -s --format=%ci ${GITHUB_SHA})
           export COMMIT_SHA=${GITHUB_SHA}
           docker build --build-arg COMMIT_TIME --build-arg COMMIT_SHA -t "docker.pkg.github.com/ledermann/workcation/workcation:latest" .
-
-      - name: Login to GitHub Package Registry
-        run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p ${{ secrets.PACKAGES_TOKEN }}
 
       - name: Push the production image
         run: docker push "docker.pkg.github.com/ledermann/workcation/workcation:latest"

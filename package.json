@@ -2,10 +2,13 @@
   "name": "workcation",
   "private": true,
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.5",
+    "@tailwindcss/custom-forms": "^0.2.1",
     "@inertiajs/inertia": "^0.1.7",
     "@inertiajs/inertia-vue": "^0.1.2",
     "@rails/ujs": "^6.0.2",
     "@rails/webpacker": "^4.2.2",
+    "tailwindcss": "^1.2.0-canary.5",
     "timeago.js": "^4.0.2",
     "vue": "^2.6.11",
     "vue-loader": "^15.8.3",
@@ -14,9 +17,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.0.5",
-    "@tailwindcss/custom-forms": "^0.2.1",
-    "tailwindcss": "^1.2.0-canary.5",
     "webpack-dev-server": "^3.10.1"
   },
   "eslintConfig": {

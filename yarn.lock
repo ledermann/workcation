@@ -6966,17 +6966,17 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-tailwindcss@^1.2.0-canary.5:
-  version "1.2.0-canary.5"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.2.0-canary.5.tgz#d89b310733a28e0a44ed078155ce7dd3d5f754b5"
-  integrity sha512-pIXsrTzzdErbU+unyl4vSDEydtr0iJ9OZ18RqaQdW5QGu3/XsoMHCQk3amn5Y23YEGwQcs9+wWnDqa0Yu5MUcg==
+tailwindcss@^1.2.0-canary.7:
+  version "1.2.0-canary.7"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.2.0-canary.7.tgz#1ba44eed81ce94a7fa7fb59842b36869ec8a6382"
+  integrity sha512-TU2mARwIXYTBAINCydUqnQPi0HsbF2KOigj340Egu3tCzwLuVzLR+DA5SOmdwt7GtwZ3tOAvTWIXRA5+kBtL7w==
   dependencies:
     autoprefixer "^9.4.5"
     bytes "^3.0.0"
     chalk "^3.0.0"
     detective "^5.2.0"
     fs-extra "^8.0.0"
-    lodash "^4.17.11"
+    lodash "^4.17.15"
     node-emoji "^1.8.1"
     normalize.css "^8.0.1"
     postcss "^7.0.11"

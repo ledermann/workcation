@@ -3,11 +3,11 @@
   "private": true,
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.6",
-    "@tailwindcss/custom-forms": "^0.2.1",
     "@inertiajs/inertia": "^0.1.7",
     "@inertiajs/inertia-vue": "^0.1.2",
     "@rails/ujs": "^6.0.2",
     "@rails/webpacker": "^4.2.2",
+    "@tailwindcss/custom-forms": "^0.2.1",
     "tailwindcss": "^1.2.0",
     "timeago.js": "^4.0.2",
     "vue": "^2.6.11",

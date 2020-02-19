@@ -114,6 +114,15 @@ Style/Documentation:
 Style/ClassAndModuleChildren:
   Enabled: false
 
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
+
 ### Layout
 
 Layout/DotPosition:

@@ -11,7 +11,8 @@ import '../styles/application.scss'
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 const images = require.context('../images', true)
-const imagePath = (name) => images(name, true)
+const imagePath = (name) => images(`./${name}`, true).default
+Vue.prototype.imagePath = imagePath
 
 const req = require.context('../components', true, /\.(js|vue)$/i)
 req.keys().map((key) => {

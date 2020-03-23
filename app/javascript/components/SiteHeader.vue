@@ -2,7 +2,7 @@
   <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between xl:bg-white">
     <div class="flex justify-between px-4 py-3 xl:w-72 xl:bg-gray-900 xl:justify-center xl:py-5">
       <inertia-link href="/">
-        <img class="h-8 w-auto" src="@/images/logo-black.svg" alt="Logo"/>
+        <img class="h-8 w-auto" :src="imagePath('logo-black.svg')" alt="Logo"/>
       </inertia-link>
       <div class="flex sm:hidden">
         <button @click="toggle" type="button" class="px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white" aria-label="Toggle nav">

@@ -2,7 +2,7 @@
   <main class="px-8 py-6 lg:px-0 lg:py-20 lg:relative lg:min-h-screen">
     <div class="lg:mx-auto xl:max-w-6xl">
       <div class="lg:pl-12 lg:pr-8 lg:w-7/12">
-        <img alt="Logo" src="~/images/logo-white.svg" class="h-10 w-auto">
+        <img alt="Logo" :src="imagePath('logo-white.svg')" class="h-10 w-auto">
 
         <p class="mt-3 text-xs" v-if="git.commit_url">
           <a
@@ -18,9 +18,9 @@
 
         <div class="relative mt-6 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12">
           <img
-            srcset="~/images/beach-work-small.jpg 1024w, ~/images/beach-work-large.jpg 3008w"
+            :srcset="imagePath('beach-work-small.jpg') + ' 1024w, ' + imagePath('beach-work-large.jpg') + ' 3008w'"
             sizes="100vw"
-            src="~/images/beach-work-small.jpg"
+            :src="imagePath('beach-work-small.jpg')"
             class="h-56 w-full object-cover object-center rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-left lg:shadow-none lg:rounded-none"
             alt="People workcationing on beach"
           >

@@ -2,7 +2,7 @@
   "name": "workcation",
   "private": true,
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.2",
+    "@fullhuman/postcss-purgecss": "^2.2.0",
     "@inertiajs/inertia": "^0.1.9",
     "@inertiajs/inertia-vue": "^0.1.2",
     "@rails/ujs": "^6.0.2",

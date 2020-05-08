@@ -4,7 +4,7 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "@inertiajs/inertia": "^0.1.9",
-    "@inertiajs/inertia-vue": "^0.1.2",
+    "@inertiajs/inertia-vue": "^0.1.4",
     "@rails/ujs": "^6.0.3",
     "@rails/webpacker": "^5.1.1",
     "@tailwindcss/custom-forms": "^0.2.1",

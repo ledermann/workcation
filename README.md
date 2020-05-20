@@ -24,7 +24,7 @@ Then, open http://localhost:3000 in your browser.
 
 ## Requirements
 
-- Ruby 2.6
+- Ruby 2.7
 - PostgreSQL
 
 

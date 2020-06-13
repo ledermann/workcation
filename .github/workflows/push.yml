@@ -70,6 +70,12 @@ jobs:
           bundle exec rake test
           bundle exec rake test:system
 
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: Screenshots
+          path: tmp/screenshots
+
   deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'

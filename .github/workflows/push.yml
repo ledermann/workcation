@@ -53,12 +53,6 @@ jobs:
       - name: Install Yarn packages
         run: yarn install --frozen-lockfile
 
-      - name: Compile assets
-        env:
-          RAILS_ENV: test
-          NODE_ENV: test
-        run: bundle exec rails webpacker:compile
-
       - name: Run Tests
         env:
           DB_HOST: localhost

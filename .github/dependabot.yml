@@ -7,6 +7,16 @@ updates:
     time: '01:00'
     timezone: Europe/Berlin
   open-pull-requests-limit: 10
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: daily
+    time: '01:00'
+    timezone: Europe/Berlin
+  labels:
+    - "dependencies"
+    - "javascript"
+    - "automerge"
 - package-ecosystem: bundler
   directory: "/"
   schedule:
@@ -18,3 +28,7 @@ updates:
   allow:
   - dependency-type: direct
   - dependency-type: indirect
+  labels:
+    - "dependencies"
+    - "ruby"
+    - "automerge"

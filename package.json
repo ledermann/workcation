@@ -6,7 +6,7 @@
     "@inertiajs/inertia": "^0.1.9",
     "@inertiajs/inertia-vue": "^0.1.4",
     "@rails/ujs": "^6.0.3",
-    "@rails/webpacker": "^5.2.0",
+    "@rails/webpacker": "^5.2.1",
     "@tailwindcss/custom-forms": "^0.2.1",
     "tailwindcss": "^1.6.2",
     "timeago.js": "^4.0.2",

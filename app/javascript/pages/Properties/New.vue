@@ -24,20 +24,20 @@
           <div class="bg-white rounded shadow overflow-hidden max-w-lg">
             <form @submit.prevent="submit">
               <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
-                <text-input v-model="form.title" :errors="$page.errors.title" class="pr-6 w-full" label="Title" />
+                <text-input v-model="form.title" :errors="$page.props.errors.title" class="pr-6 w-full" label="Title" />
               </div>
               <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
-                <text-input v-model="form.beds" :errors="$page.errors.beds" class="pr-6 w-full lg:w-1/2" label="Beds" type="number" min="0" />
-                <text-input v-model="form.baths" :errors="$page.errors.baths" class="pr-6 w-full lg:w-1/2" label="Baths" type="number" min="0" />
+                <text-input v-model="form.beds" :errors="$page.props.errors.beds" class="pr-6 w-full lg:w-1/2" label="Beds" type="number" min="0" />
+                <text-input v-model="form.baths" :errors="$page.props.errors.baths" class="pr-6 w-full lg:w-1/2" label="Baths" type="number" min="0" />
               </div>
 
               <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
-                <select-input v-model="form.location_id" :errors="$page.errors.location" class="pr-6 w-full lg:w-1/2" label="Location">
+                <select-input v-model="form.location_id" :errors="$page.props.errors.location" class="pr-6 w-full lg:w-1/2" label="Location">
                   <option :value="null" />
                   <option v-for="location in locations" :key="location.id" :value="location.id">{{ location.title }}</option>
                 </select-input>
 
-                <text-input v-model="form.price" :errors="$page.errors.price" class="pr-6 w-full lg:w-1/2" label="Price /wk" />
+                <text-input v-model="form.price" :errors="$page.props.errors.price" class="pr-6 w-full lg:w-1/2" label="Price /wk" />
               </div>
 
               <div class="mt-5 px-8 py-4 bg-grey-100 border-t border-grey-200 flex justify-end items-center">

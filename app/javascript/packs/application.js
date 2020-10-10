@@ -47,24 +47,23 @@ import axios from 'axios'
 // expected by Rails
 axios.defaults.xsrfHeaderName = 'X-CSRF-Token'
 
-import {
-  InertiaApp
-} from '@inertiajs/inertia-vue'
 import Vue from 'vue'
+import { app, plugin } from '@inertiajs/inertia-vue'
+import { InertiaProgress as progress } from '@inertiajs/progress/src'
+Vue.use(plugin)
+progress.init()
 
-Vue.use(InertiaApp)
-
-const app = document.getElementById('app')
+const el = document.getElementById('app')
 
 new Vue({
   metaInfo: {
     title: 'Loading…',
     titleTemplate: '%s | Workcation',
   },
-  render: h => h(InertiaApp, {
+  render: h => h(app, {
     props: {
-      initialPage: JSON.parse(app.dataset.page),
+      initialPage: JSON.parse(el.dataset.page),
       resolveComponent: name => import(`../pages/${name}`).then(module => module.default),
     },
   }),
-}).$mount(app)
+}).$mount(el)

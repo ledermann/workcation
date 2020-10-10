@@ -34,17 +34,17 @@ export default {
 
   computed: {
     notice() {
-      if (this.$page.flash.flashes) return this.$page.flash.flashes.notice
+      if (this.$page.props.flash.flashes) return this.$page.props.flash.flashes.notice
       else return null
     },
 
     errors() {
-      return Object.keys(this.$page.errors)
+      return Object.keys(this.$page.props.errors)
     }
   },
 
   watch: {
-    '$page.flash': {
+    '$page.props.flash': {
       handler() {
         this.show = true
       },

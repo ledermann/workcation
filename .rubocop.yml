@@ -11,6 +11,7 @@ AllCops:
     - node_modules/**/*
     - tmp/**/*
     - vendor/**/*
+  NewCops: enable
 
 ### Rails
 
@@ -47,9 +48,6 @@ Metrics/AbcSize:
 
 Metrics/BlockLength:
   Max: 150
-
-Metrics/LineLength:
-  Max: 165
 
 Metrics/MethodLength:
   Max: 30
@@ -124,6 +122,9 @@ Style/HashTransformValues:
   Enabled: false
 
 ### Layout
+
+Layout/LineLength:
+  Max: 165
 
 Layout/DotPosition:
   EnforcedStyle: trailing

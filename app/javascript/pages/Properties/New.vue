@@ -84,8 +84,10 @@ export default {
     submit() {
       this.sending = true
       this.$inertia
-        .post('/properties', this.form)
-        .then(() => (this.sending = false))
+        .post('/properties', this.form, {
+          onStart: () => this.sending = true,
+          onFinish: () => this.sending = false,
+        })
     }
   }
 }

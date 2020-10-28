@@ -120,9 +120,8 @@ export default {
       searchParams.baths = this.searchBaths
       searchParams.price = this.searchPrice
 
-      this.$inertia.replace('/properties', {
-        preserveState: true,
-        data: searchParams
+      this.$inertia.get('/properties', searchParams, {
+        preserveState: true
       })
     }
   }

@@ -3,9 +3,9 @@
   "private": true,
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
-    "@inertiajs/inertia": "^0.5.2",
+    "@inertiajs/inertia": "^0.6.0",
     "@inertiajs/inertia-vue": "^0.4.1",
-    "@inertiajs/progress": "^0.1.2",
+    "@inertiajs/progress": "^0.2.0",
     "@rails/ujs": "^6.0.3",
     "@rails/webpacker": "^5.2.1",
     "@tailwindcss/custom-forms": "^0.2.1",

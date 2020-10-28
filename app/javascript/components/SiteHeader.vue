@@ -108,9 +108,8 @@ export default {
       )
       searchParams.keywords = this.searchKeywords
 
-      this.$inertia.replace('/properties', {
-        preserveState: true,
-        data: searchParams
+      this.$inertia.get('/properties', searchParams, {
+        preserveState: true
       })
     }
   }

@@ -10,7 +10,7 @@ class Property < ApplicationRecord
 
   scope :search_for_keywords, lambda { |keywords|
     if keywords.present?
-      keywords.split(' ').reduce(self) do |result, word|
+      keywords.split.reduce(self) do |result, word|
         result.where('title ILIKE ?', "%#{sanitize_sql_like word.strip}%")
       end
     else

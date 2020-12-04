@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
-    "@inertiajs/inertia": "^0.6.3",
+    "@inertiajs/inertia": "^0.7.0",
     "@inertiajs/inertia-vue": "^0.4.3",
     "@inertiajs/progress": "^0.2.3",
     "@rails/ujs": "^6.0.3",

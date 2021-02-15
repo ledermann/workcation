@@ -855,10 +855,10 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@rails/ujs@^6.1.2":
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.1.2.tgz#ccafb8d8e7ae3bfd21824b018be9f1c417bef5b4"
-  integrity sha512-WEXne46Srl3CegO4ngPSWLL7UYWoL1N78254LSzWJgE2mr7XZlbX8S0vltLHDYj5YRFCYEslsBMPisVb59tpYA==
+"@rails/ujs@^6.1.2-1":
+  version "6.1.2-1"
+  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.1.2-1.tgz#2b5963e93c02f5b52f0f1f31f52c04a915c0cc08"
+  integrity sha512-XojGDY6DkcXSa/jbHu0xJwjR8YeqDaZRYnoUROlYqaafw8bSbnv8h8uvAdCfSgyo4+/6j1QgU2src6V3CgfC4g==
 
 "@rails/webpacker@^5.2.1":
   version "5.2.1"

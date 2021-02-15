@@ -227,7 +227,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
-  rails (~> 6.1.0)
+  rails (~> 6.1.2, >= 6.1.2.1)
   rubocop
   rubocop-performance
   rubocop-rails

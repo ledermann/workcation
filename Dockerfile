@@ -1,5 +1,5 @@
-FROM ledermann/rails-base-builder:2.7.2-alpine AS Builder
-FROM ledermann/rails-base-final:2.7.2-alpine
+FROM ledermann/rails-base-builder:3.0.0-alpine AS Builder
+FROM ledermann/rails-base-final:3.0.0-alpine
 LABEL maintainer="georg@ledermann.dev"
 
 USER app

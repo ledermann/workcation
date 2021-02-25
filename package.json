@@ -2,7 +2,7 @@
   "name": "workcation",
   "private": true,
   "dependencies": {
-    "@inertiajs/inertia": "^0.8.4",
+    "@inertiajs/inertia": "^0.8.5",
     "@inertiajs/inertia-vue": "^0.5.5",
     "@inertiajs/progress": "^0.2.4",
     "@rails/ujs": "^6.1.3",

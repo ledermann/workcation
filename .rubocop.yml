@@ -36,6 +36,9 @@ Rails/ReversibleMigration:
 Rails/FilePath:
   EnforcedStyle: arguments
 
+Rails/EnvironmentVariableAccess:
+  Enabled: false
+
 ### Bundler
 
 Bundler/OrderedGems:

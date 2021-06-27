@@ -85,7 +85,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    inertia_rails (1.11.0)
+    inertia_rails (1.11.1)
       rails (>= 5)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)

@@ -8,7 +8,7 @@
     "@rails/ujs": "^6.1.4",
     "@rails/webpacker": "^5.4.0",
     "@tailwindcss/custom-forms": "^0.2.1",
-    "autoprefixer": "^9",
+    "autoprefixer": "^10",
     "postcss": "^8",
     "tailwindcss": "^1.9.6",
     "timeago.js": "^4.0.2",

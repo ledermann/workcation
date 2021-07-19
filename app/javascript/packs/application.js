@@ -48,9 +48,11 @@ import axios from 'axios'
 axios.defaults.xsrfHeaderName = 'X-CSRF-Token'
 
 import Vue from 'vue'
-import { app, plugin } from '@inertiajs/inertia-vue'
+import { app, plugin, Head, Link } from '@inertiajs/inertia-vue'
 import { InertiaProgress as progress } from '@inertiajs/progress/src'
 Vue.use(plugin)
+Vue.component('InertiaHead', Head)
+Vue.component('InertiaLink', Link)
 progress.init()
 
 const el = document.getElementById('app')

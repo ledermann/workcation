@@ -88,7 +88,7 @@ GEM
       concurrent-ruby (~> 1.0)
     inertia_rails (1.11.1)
       rails (>= 5)
-    jbuilder (2.11.2)
+    jbuilder (2.11.3)
       activesupport (>= 5.0.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)

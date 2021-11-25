@@ -1,5 +1,5 @@
-FROM ledermann/rails-base-builder:3.0.2-alpine AS Builder
-FROM ledermann/rails-base-final:3.0.2-alpine
+FROM ledermann/rails-base-builder:3.0.3-alpine AS Builder
+FROM ledermann/rails-base-final:3.0.3-alpine
 LABEL maintainer="georg@ledermann.dev"
 
 # Workaround to trigger Builder's ONBUILDs to finish:

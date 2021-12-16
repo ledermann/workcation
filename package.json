@@ -5,7 +5,7 @@
     "@inertiajs/inertia": "^0.10.1",
     "@inertiajs/inertia-vue": "^0.7.2",
     "@inertiajs/progress": "^0.2.6",
-    "@rails/ujs": "^6.1.4",
+    "@rails/ujs": "^7.0.0",
     "@rails/webpacker": "^5.4.3",
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9",

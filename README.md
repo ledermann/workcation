@@ -1,3 +1,7 @@
+# ARCHIVED
+
+This repository will not be updated anymore. For an example of using Inertia.js with Rails, see my other repo [ledermann/pingcrm](https://github.com/ledermann/pingcrm).
+
 # Inertia.js example app
 
 This is an example on how to use [Inertia.js](https://inertiajs.com/) to build the frontend with [Vue.js](https://vuejs.org/) within a [Ruby on Rails](https://rubyonrails.org/) application
@@ -7,7 +11,11 @@ There is already a demo application to show how Inertia.js works (see [Ping CRM]
 
 This app has two pages - a start screen and a list screen with a filtering UI. The layout and styling is taken from the [Tailwind CSS demo project](https://github.com/adamwathan/workcation). Click around and inspect the data transmitted via your DevTools network tab. You see HTML responses at the first request and JSON response in all subsequent requests.
 
-There is a live demo available at [workcation.ledermann.dev](https://workcation.ledermann.dev).
+| Start screen  | List screen |
+| ------------- | ------------- |
+| ![](screenshot-start.png)|![](screenshot-list.png)|
+
+~~There is a live demo available at [workcation.ledermann.dev](https://workcation.ledermann.dev).~~
 
 
 ## Try it out
